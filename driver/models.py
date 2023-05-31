@@ -1,5 +1,5 @@
 from django.db import models
-
+# asd
 # Create your models here.
 
 Viloyat_choices = (
