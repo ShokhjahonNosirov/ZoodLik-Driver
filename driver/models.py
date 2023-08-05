@@ -23,6 +23,8 @@ car_choices = (
 
 class Profile(models.Model):
     driver = models.ForeignKey(User, on_delete=models.CASCADE)
+    # drive_photo
+    # car_photo
     ism = models.CharField(max_length=255)
     familiya = models.CharField(max_length=255)
     bio = models.TextField(blank=True)
@@ -56,8 +58,9 @@ class Taklif(models.Model):
     Kun = models.DateField()
     Narx = models.IntegerField()
     Vaqt = models.TimeField()
-    Author = models.ForeignKey(User, on_delete=models.CASCADE)
+    Author = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.Qayerdan+"-"+self.Qayerga
+
 

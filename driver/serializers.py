@@ -7,9 +7,11 @@ class ProfileSerializer(serializers.ModelSerializer):
         model = Profile
         fields = '__all__'
 class TaklifSerializer(serializers.ModelSerializer):
-    # story_post_video = serializers.CharField(source='story_post.video')
+    Ism = serializers.CharField(source='Author.ism')
+    Familiya = serializers.CharField(source='Author.familiya')
     class Meta:
         model = Taklif
         fields = [
-            'Author', 'Qayerdan', 'Qayerga', 'Orinlar_soni', 'Narx', 'Vaqt'
+            'Ism', 'Familiya', 'Author', 'Qayerdan', 'Qayerga', 'Orinlar_soni', 'Kun', 'Narx', 'Vaqt'
         ]
+
