@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('driver.urls')),
     path('accounts/', include('accounts.urls')),
+    path("api-auth/", include("rest_framework.urls")), # bu login ko'rinishi uchun browsable api da
 ]
