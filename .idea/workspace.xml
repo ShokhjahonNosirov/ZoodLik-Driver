@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c9f7ee2b-ff42-40b8-93d9-57147a06cb6e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/driver/permissions.py" beforeDir="false" afterPath="$PROJECT_DIR$/driver/permissions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/driver/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/driver/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/driver/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/driver/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
