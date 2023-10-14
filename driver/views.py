@@ -46,6 +46,26 @@ class TaklifDetailView(generics.RetrieveUpdateDestroyAPIView, TaklifUserOrReadOn
     queryset = Taklif.objects.all()
     serializer_class = TaklifSerializer
 
+
+
+class ProfileView(APIView):
+    # user only have reading permission
+    #permission_classes = [IsAdminUserOrReadOnly]
+
+    def get(self, request, format=None, **kwargs):
+        course = Profile.objects.all()
+        serializer = ProfileSerializer(course, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def post(self, request, format=None):
+        data = request.data
+        serializer = ProfileSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
 # class TaklifDetailView(APIView, TaklifUserOrReadOnly):
 #
 #     permission_classes = [TaklifUserOrReadOnly]
@@ -68,20 +88,3 @@ class TaklifDetailView(generics.RetrieveUpdateDestroyAPIView, TaklifUserOrReadOn
 #         taklif = Taklif.objects.get(pk=pk)
 #         taklif.delete()
 #         return Response(status=status.HTTP_200_OK)
-
-class ProfileView(APIView):
-    # user only have reading permission
-    #permission_classes = [IsAdminUserOrReadOnly]
-
-    def get(self, request, format=None, **kwargs):
-        course = Profile.objects.all()
-        serializer = ProfileSerializer(course, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
-
-    def post(self, request, format=None):
-        data = request.data
-        serializer = ProfileSerializer(data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
