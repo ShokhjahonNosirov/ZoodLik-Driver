@@ -21,7 +21,9 @@ class TaklifUserOrReadOnly(BasePermission):
         # print(obj.Author.driver.username, "heelo")
         if request.method in SAFE_METHODS:
             return True
-        return obj.Author.driver.username == str(request.user)
+        print(obj.Author.username)
+        print(str(request.user))
+        return obj.Author.username == str(request.user)
 
 
 
