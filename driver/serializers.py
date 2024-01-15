@@ -1,11 +1,7 @@
 from rest_framework import serializers
-from .models import Taklif, Profile
+from .models import Taklif
 
 
-class ProfileSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Profile
-        fields = '__all__'
 class TaklifSerializer(serializers.ModelSerializer):
     Ism = serializers.CharField(source='Author.ism', read_only=True)
     Familiya = serializers.CharField(source='Author.familiya', read_only=True)

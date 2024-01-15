@@ -1,8 +1,9 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
+from driver.models import Profile
 
 
-
+# login register
 class UserRegisterSerializer(serializers.ModelSerializer):
     password2 = serializers.CharField(style={'input_type': 'password'}, write_only=True)
     # phone_number = serializers.IntegerField(style={'input_type': 'phone_number'}, write_only=True)
@@ -26,4 +27,11 @@ class UserRegisterSerializer(serializers.ModelSerializer):
         account.save()
 
         return account
+
+
+# profile serializer
+class ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile
+        fields = '__all__'
 
